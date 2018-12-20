@@ -21,7 +21,7 @@ function animateStar(star) {
     setTimeout(()=> {
         star.classList.add('offscreen')
         star.classList.remove('slideout');
-    },4000)
+    },2500)
 }
 
 
