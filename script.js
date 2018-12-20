@@ -9,11 +9,14 @@ let secondLastPlayed = 0;
 
 
 function removeTransition(e) {
+
     if (e.propertyName != 'transform') return;
     e.target.classList.remove('playing');
+
 }
 
 function animateStar(star) {
+
     star.classList.remove('offscreen');
     setTimeout(()=> {
         star.classList.add('slideout');
@@ -22,11 +25,11 @@ function animateStar(star) {
         star.classList.add('offscreen')
         star.classList.remove('slideout');
     },2500)
+
 }
 
 
 function playVoice(e) {
-    
     instructions.style.opacity = 0;
 
     if (secondLastPlayed && secondLastPlayed.currentTime > 0) {
@@ -36,20 +39,16 @@ function playVoice(e) {
 
     const key = document.querySelector(`div.key[data-key="${e.keyCode}"]`) || this;
     if (key === window) return;
+    
     const soundGroup = document.querySelector(`div.group[data-group="${key.dataset.group}"]`);
     const sound = soundGroup.querySelector(`audio[data-order="${order}"]`);
     key.classList.add('playing');
     sound.play();
     sound.currentTime = 0;
-    console.log(sound)
-    console.log(sound.order)
+
     if (order >= 8) {
         animateStar(star);
-        if (sound.dataset.order == 1 || sound.dataset.order == 8) {
-            blast.play();
-            console.log(blast)
-        };
-
+        blast.play();
         order = 1;
     } else {
         order += 1;
@@ -58,7 +57,6 @@ function playVoice(e) {
     secondLastPlayed = lastPlayed;
     lastPlayed = sound;
 
-    
 }
 
 
