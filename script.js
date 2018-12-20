@@ -1,6 +1,8 @@
 const keys = Array.from(document.querySelectorAll('.key'));
 const star = document.querySelector('img.star');
-const instructions = document.querySelector('.instructions')
+const instructions = document.querySelector('.instructions');
+const blast = document.querySelector('audio.blast');
+
 let order = 1;
 let lastPlayed = 0;
 let secondLastPlayed = 0;
@@ -39,8 +41,15 @@ function playVoice(e) {
     key.classList.add('playing');
     sound.play();
     sound.currentTime = 0;
+    console.log(sound)
+    console.log(sound.order)
     if (order >= 8) {
         animateStar(star);
+        if (sound.dataset.order == 1 || sound.dataset.order == 8) {
+            blast.play();
+            console.log(blast)
+        };
+
         order = 1;
     } else {
         order += 1;
