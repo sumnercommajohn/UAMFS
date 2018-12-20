@@ -1,0 +1,125 @@
+html {
+  font-size: 10px;
+  background-image: linear-gradient(to right bottom, hotpink, pink);
+  background-size: cover;
+}
+
+body,html {
+  margin: 0;
+  padding: 20px, 0;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+kbd {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  height: 50vh;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.key {
+  border: .3rem solid black;
+  border-radius: .5rem;
+  margin: .5rem;
+  font-size: 2rem;
+  padding: 1rem .5rem;
+  transition: all .1s ease;
+  width: 15%;
+  height: 10vh;
+  color: black;
+  background: lightskyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key:hover {
+  cursor: pointer;
+  background: rgb(87, 172, 206);
+}
+
+.key:active {
+  cursor: pointer;
+  background: rgb(87, 172, 206);
+}
+
+.key:focus {
+  background: lightskyblue;
+}
+
+@media screen and (hover: none) {
+  .key:hover { background: lightskyblue; }
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+.star-container {
+  height: 50vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+}
+
+img.star  {
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: block;
+  height: 80%;
+}
+
+ img.star.offscreen {
+  display: block;
+  transform: translateX(-500%);
+}
+
+
+img.star.slideout {
+  display: block;
+  transform: translateY(-500%);
+}
+
+.instructions {
+  font-size: 3rem;
+  text-align: center;
+  position: fixed;
+  transition: all .3s linear;
+}
+
+
+@media screen and (min-width: 515px) {
+
+  .keys {
+    flex-wrap: nowrap;
+  }
+  
+  .key {
+    width: 8%;
+    height: 20vh;
+  }
+
+}
