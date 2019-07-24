@@ -4,14 +4,32 @@ html {
   background-size: cover;
 }
 
-body,html {
+body,
+html {
   margin: 0;
   padding: 20px, 0;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: "Luckiest Guy", cursive;
+}
+
+.github-link {
+  font-size: 3rem;
+  text-align: right;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.github-link a {
+  color: palevioletred;
+  transition: 0.5s;
+}
+
+.github-link a:hover {
+  color: black;
 }
 
 kbd {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .keys {
@@ -25,12 +43,12 @@ kbd {
 }
 
 .key {
-  border: .3rem solid black;
-  border-radius: .5rem;
-  margin: .5rem;
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
   font-size: 2rem;
-  padding: 1rem .5rem;
-  transition: all .1s ease;
+  padding: 1rem 0.5rem;
+  transition: all 0.1s ease;
   width: 15%;
   height: 10vh;
   color: black;
@@ -55,7 +73,9 @@ kbd {
 }
 
 @media screen and (hover: none) {
-  .key:hover { background: lightskyblue; }
+  .key:hover {
+    background: lightskyblue;
+  }
 }
 
 .playing {
@@ -72,7 +92,7 @@ kbd {
 .sound {
   font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   color: #ffc600;
 }
 
@@ -83,20 +103,18 @@ kbd {
   align-items: center;
   align-content: center;
   justify-content: center;
-
 }
 
-img.star  {
+img.star {
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: block;
   height: 80%;
 }
 
- img.star.offscreen {
+img.star.offscreen {
   display: block;
   transform: translateX(-500%);
 }
-
 
 img.star.slideout {
   display: block;
@@ -104,22 +122,23 @@ img.star.slideout {
 }
 
 .instructions {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   position: fixed;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 
-
 @media screen and (min-width: 515px) {
-
   .keys {
     flex-wrap: nowrap;
   }
-  
+
   .key {
     width: 8%;
     height: 20vh;
   }
 
+  .instructions {
+    font-size: 3rem;
+  }
 }
